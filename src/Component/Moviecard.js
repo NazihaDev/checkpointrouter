@@ -1,21 +1,20 @@
-
+import { Link } from "react-router-dom";
 const Moviecard = ({ movie }) => {
-  const { Poster, Title, Year, description, Ratings } = movie;
+  const { id, Poster, Title, Year, shortDescription, Ratings } = movie;
   return (
-    
-    <div className="movie-card" >
-      <div class="movie-img"> 
-   <img src={Poster} alt={Title} />
-   </div>
-   <div class="card-body">
-      <h2 className="movie-title">{Title}</h2>
-      <span className="movie-year">{Year}</span>
-      <p class="movie-description">{description}</p>
-      <p class="movie-Rati">{Ratings}</p>
+    <div className="movie-card">
+      <div class="movie-img">
+        <img src={Poster} alt={Title} />
+      </div>
+      <div class="card-body">
+        <Link to={`/movies/${id}`}>
+          <h2 className="movie-title">{Title}</h2>
+        </Link>
+        <span className="movie-year">{Year}</span>
+        <p class="movie-description">{shortDescription}</p>
+        <p class="movie-Rati">{Ratings}</p>
       </div>
     </div>
-    
   );
 };
 export default Moviecard;
-

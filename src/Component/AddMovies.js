@@ -5,8 +5,12 @@ const AddMovies = ({ addNewMovie }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [Title, setTitle] = useState("casa del papel");
   const [Year, setYear] = useState(1976);
-  const [description, setDescription] = useState("A mentally unstable driver in Ned sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute.");
-  const [Poster, setPoster] = useState("https://i.inews.co.uk/content/uploads/2020/04/money-heist-first-impression-1200-640x360.jpg");
+  const [description, setDescription] = useState(
+    "A mentally unstable driver in Ned sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute."
+  );
+  const [Poster, setPoster] = useState(
+    "https://i.inews.co.uk/content/uploads/2020/04/money-heist-first-impression-1200-640x360.jpg"
+  );
   const [Ratings, setRatings] = useState(4);
 
   const openModal = () => {
@@ -21,14 +25,16 @@ const AddMovies = ({ addNewMovie }) => {
       Year,
       description,
       Poster,
-     Ratings
-     };
+      Ratings,
+    };
     addNewMovie(newMovie);
     setIsOpen(false);
   };
   return (
     <div>
-      <button className="Modal-btn" onClick={openModal}>Add Movie</button>
+      <button className="Modal-btn" onClick={openModal}>
+        Add Movie
+      </button>
       <Modal
         className="add-modal"
         isOpen={modalIsOpen}
@@ -75,7 +81,6 @@ const AddMovies = ({ addNewMovie }) => {
           {/* <div className="rating-search">
             <input />
           </div> */}
-          
         </form>
         <button className="Modal-btn" onClick={handleSubmit}>
           Submit
